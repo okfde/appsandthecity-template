@@ -7,19 +7,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{% if page.title %} {{ page.title }} | {% endif %}Apps and the City</title>
+  <title>{% if page.title %} {{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.desc %} {{ page.desc }} {% endif %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="http://appsandthecity.net/img/favicon.png" type="image/png" />
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/custom.css" />
+  <link rel="stylesheet" href="http://appsandthecity.net/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://appsandthecity.net/css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="http://appsandthecity.net/css/style.css" />
+  <link rel="stylesheet" href="http://appsandthecity.net/css/custom.css" />
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
-  <script type="text/javascript" src="/js/custom.js"></script>
+  <script type="text/javascript" src="http://appsandthecity.net/js/custom.js"></script>
 </head>
 <body onload="initialize()">
   <div id="wrapper" class="container">
@@ -29,24 +29,24 @@
         <li>
           <a href="https://twitter.com/appsandthecity">Twitter</a>
         </li>
+        <li>
+          <a href="https://github.com/okfde/appsandthecity">GitHub</a>
+        </li>
       </ul>
-      <p id="location-header">
-        29. November 2012 | <a href="http://www.supermarkt-berlin.net/">Supermarkt Berlin</a>
-      </p>
+      <p id="location-header">{{ site.date }} | {{ site.location }}</p>
     </header>
 
     <div class="navbar aatc-container">
       <div class="navbar-inner">
         <ul class="nav span12">
-          <li><a href="/#beispiele">Beispiele</a></li>
-          <li><a href="/#entwicklertag">Entwicklertag</a></li>
-          <li><a href="/#argumente">Argumente</a></li>
-          <li><a href="/daten">Daten</a></li>
-          <li><a href="/apps">Apps</a></li>
-          <li><a href="/media">Media</a></li>
+          {% for link in site.navigation %}
+            <li>
+              <a href="{{ link.url }}">{{ link.text }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
-      <hr/>
+      <hr />
     </div>
 
     <div class="aatc-container">
