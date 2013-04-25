@@ -33,7 +33,13 @@
           <a href="{{ site.github }}">GitHub</a>
         </li>
       </ul>
-      <p id="location-header">{{ site.date }}{% if site.location %} | <a href="{{ site.location.url }}">{{ site.location.text }}</a>{% endif %}</p>
+      <p id="location-header">{{ site.date }}
+        {% if site.location %}
+        {% for link in site.location %}
+         | <a href="{{ link.url }}">{{ link.text }}</a>
+        {% endfor %}
+        {% endif %}
+      </p>
     </header>
 
     <div class="navbar aatc-container">
