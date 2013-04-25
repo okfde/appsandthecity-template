@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{% if page.title %} {{ page.title }} | {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.desc %} {{ page.desc }} {% endif %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="http://appsandthecity.net/img/favicon.png" type="image/png" />
@@ -30,10 +30,10 @@
           <a href="https://twitter.com/appsandthecity">Twitter</a>
         </li>
         <li>
-          <a href="https://github.com/okfde/appsandthecity">GitHub</a>
+          <a href="{{ site.github }}">GitHub</a>
         </li>
       </ul>
-      <p id="location-header">{{ site.date }} | {{ site.location }}</p>
+      <p id="location-header">{{ site.date }}{% if site.location %} | <a href="{{ site.location.url }}">{{ site.location.text }}</a>{% endif %}</p>
     </header>
 
     <div class="navbar aatc-container">
