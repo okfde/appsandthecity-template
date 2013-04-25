@@ -62,17 +62,21 @@
       <footer id="footer" class="span8 offset4">
         <div class="row border-row">
           <ul id="footer-menu">
+            {% if site.contact %}
             <li>
-              <a href="mailto:julia.kloiber@okfn.org">Kontakt</a>
+              <a href="mailto:{{ site.contact }}">Kontakt</a>
             </li>
             <li>
-              <a href="http://lists.okfn.org/mailman/listinfo/open-data-nahverkehr">Mailingliste</a>
+              <a href="mailto:{{ site.contact }}">Sponsor werden</a>
             </li>
+            {% endif %}
+            {% if site.mailinglist %}
             <li>
-              <a href="mailto:julia.kloiber@okfn.org">Sponsor werden</a>
+              <a href="{{ site.mailinglist }}">Mailingliste</a>
             </li>
+            {% endif %}
             <li>
-              <a href="https://github.com/okfde/appsandthecity">Auf GitHub forken</a>
+              <a href="{{ site.github }}">Auf GitHub forken</a>
             </li>
           </ul>
           <p id="footer-text">
