@@ -35,9 +35,9 @@
       </ul>
       <p id="location-header">{{ site.date }}
         {% if site.location %}
-        {% for link in site.location %}
-         | <a href="{{ link.url }}">{{ link.text }}</a>
-        {% endfor %}
+          {% for link in site.location %}
+           | <a href="{{ link.url }}">{{ link.text }}</a>
+          {% endfor %}
         {% endif %}
       </p>
     </header>
@@ -45,12 +45,23 @@
     <div class="navbar aatc-container">
       <div class="navbar-inner">
         <ul class="nav span12">
+          <li>Alle Städte:</li>
+          <li>
+            <a href="http://berlin.appsandthecity.net">Berlin</a>
+          </li>
+          <li>
+            <a href="http://cologne.appsandthecity.net">Köln</a>
+          </li>
+        </ul>
+        {% if site.navigation %}
+        <ul class="nav span12">
           {% for link in site.navigation %}
             <li>
               <a href="{{ link.url }}">{{ link.text }}</a>
             </li>
           {% endfor %}
         </ul>
+        {% endif %}
       </div>
       <hr />
     </div>
